@@ -33,12 +33,14 @@ def lambda_handler(event, context):
 
     #     raise e
 
+    event_string = json.dumps(event, indent=4).replace('\\"',"\"").replace("u\'","\'")
+
     return {
         "statusCode": 200,
         "body": json.dumps({
             "message": "hello world",
-            "event": json.dumps(event,indent=4).replace("\n", ""),
+            "event": event_string,
 
             # "location": ip.text.replace("\n", "")
-        }),
+        }).replace('\\n','').replace('\\"',"\"").replace("u\'","\'"),
     }
