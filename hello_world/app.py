@@ -35,9 +35,9 @@ def lambda_handler(event, context):
 
     event_string = json.dumps(event, indent=4)
         #.replace('\"',"").replace("u\'","\'").replace(" \/","")
-    ret = {
+    ret =  json.dumps({
         "statusCode": 200,
         "message": "Simple Reply"
-    }
+    })
     return ret
 
