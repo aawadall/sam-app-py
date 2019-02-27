@@ -39,5 +39,7 @@ def lambda_handler(event, context):
         "statusCode": 200,
         "message": "Simple Reply"
     })
+
+    print(ret)
     return ret
 
