@@ -33,7 +33,7 @@ def lambda_handler(event, context):
 
     #     raise e
 
-    event_string = json.dumps(event, indent=4).replace('\"',"").replace("u\'","\'")
+    event_string = json.dumps(event, indent=4).replace('\"',"").replace("u\'","\'").replace("\/","")
 
     return {
         "statusCode": 200,
