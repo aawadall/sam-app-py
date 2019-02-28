@@ -11,6 +11,20 @@ Globals:
         Timeout: 3
 
 Resources:
+    EventsData:
+        Type: AWS::Serverless::SimpleTable
+        Properties:
+            TableName: events
+            PrimaryKey:
+                Name: id
+                Type: String
+            ProvisionedThroughput:
+                ReadCapacityUnits: 1
+                WriteCapacityUnits: 1
+            Tags:
+                Application: ATM Cash Management
+            SSESpecification:
+                SSEEnabled: true
     EventsGateway:
         Type: AWS::Serverless::Function
         Properties:
@@ -23,7 +37,6 @@ Resources:
                     Properties:
                         Path: /event
                         Method: post
-
 
     HelloWorldFunction:
         Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
