@@ -11,6 +11,7 @@
         <entry key="template.yaml">
           <value>
             <DeploySamConfig>
+              <option name="autoExecute" value="true" />
               <option name="bucketName" value="aawadall-test-sam" />
               <option name="stackName" value="sampy" />
             </DeploySamConfig>
