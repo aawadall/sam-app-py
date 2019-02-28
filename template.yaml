@@ -11,20 +11,7 @@ Globals:
         Timeout: 3
 
 Resources:
-    EventsData:
-        Type: AWS::Serverless::SimpleTable
-        Properties:
-            TableName: events
-            PrimaryKey:
-                Name: id
-                Type: String
-            ProvisionedThroughput:
-                ReadCapacityUnits: 1
-                WriteCapacityUnits: 1
-            Tags:
-                Application: ATM Cash Management
-            SSESpecification:
-                SSEEnabled: true
+
     EventsGateway:
         Type: AWS::Serverless::Function
         Properties:
