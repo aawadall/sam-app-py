@@ -6,6 +6,10 @@ def event_handler(event, context):
     }
     ret = {
         "statusCode": 200,
+        "log": {
+            "log_group_name": context.log_group_name,
+            "log_stream_name": context.log_stream_name,
+        },
         "body": json.dumps(body),
     }
 
