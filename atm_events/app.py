@@ -2,7 +2,7 @@ import json
 
 def event_handler(event, context):
     body = {
-        "context": json.dumps(context),
+        "event": event,
     }
     ret = {
         "statusCode": 200,
